@@ -1,77 +1,122 @@
-*{
+body{
     margin:0;
     padding:0;
-    box-sizing:border-box;
     font-family:Arial,sans-serif;
-}
 
-body{
+    background:linear-gradient(135deg,#3b82f6,#00d4ff);
+
     height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
 }
 
-.overlay{
+.container{
     width:100%;
     display:flex;
     justify-content:center;
-    align-items:center;
-    padding:20px;
 }
 
 .weather-card{
+
     width:360px;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
     padding:30px;
-    color:#fff;
+
+    color:white;
+
     text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
 .weather-card h1{
-    margin-bottom:20px;
+
+    font-size:42px;
+
+    margin-bottom:30px;
 }
 
 .search-box{
+
     display:flex;
+
     gap:10px;
+
+    margin-bottom:20px;
 }
 
 .search-box input{
+
     flex:1;
-    padding:12px;
+
+    padding:15px;
+
     border:none;
-    border-radius:10px;
-    outline:none;
-    font-size:16px;
+
+    border-radius:15px;
+
+    font-size:18px;
 }
 
 .search-box button{
-    width:50px;
+
+    width:60px;
+
     border:none;
-    border-radius:10px;
+
+    border-radius:15px;
+
     cursor:pointer;
-    background:#fff;
+
+    font-size:22px;
+
+    background:white;
 }
 
 .location-btn{
+
     width:100%;
-    margin-top:15px;
-    padding:12px;
+
+    padding:16px;
+
     border:none;
-    border-radius:10px;
-    background:#28a745;
-    color:#fff;
+
+    border-radius:15px;
+
+    background:#20b54d;
+
+    color:white;
+
+    font-size:20px;
+
     cursor:pointer;
-    font-size:16px;
+
+    margin-bottom:25px;
 }
 
 #result{
-    margin-top:25px;
+
+    margin-top:20px;
+
     line-height:2;
-    font-size:18px;
+
+    font-size:20px;
+}
+
+#result h2{
+
+    font-size:30px;
+}
+
+#result h3{
+
+    font-size:26px;
 }
