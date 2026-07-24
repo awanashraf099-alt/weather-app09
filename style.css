@@ -232,4 +232,72 @@ body::before{
     box-shadow:0 10px 25px rgba(0,0,0,.2);
 
 }    
-    
+/* =========================
+   WEATHER INFO
+========================= */
+
+.weather-info{
+    text-align:center;
+    margin:25px 0;
+}
+
+#weatherIcon{
+    width:120px;
+    height:120px;
+    margin-bottom:10px;
+}
+
+#cityName{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+#temperature{
+    font-size:64px;
+    font-weight:700;
+    line-height:1;
+    margin-bottom:10px;
+}
+
+#description{
+    font-size:18px;
+    text-transform:capitalize;
+    opacity:.95;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.detail-card{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:18px;
+}
+
+.detail-card i{
+    font-size:28px;
+}
+
+.detail-card h3{
+    font-size:20px;
+    margin-bottom:3px;
+}
+
+.detail-card span{
+    font-size:13px;
+    opacity:.9;
+}    
