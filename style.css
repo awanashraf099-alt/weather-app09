@@ -1,1 +1,267 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #2196f3,
+        #6dd5fa
+    );
+
+}
+
+
+.weather-container{
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+
+
+.weather-card{
+
+    max-width:420px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+
+}
+
+
+
+h1{
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.search-box{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+
+.search-box input{
+
+    flex:1;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+}
+
+
+
+.search-box button{
+
+    width:55px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    color:#2196f3;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+
+
+.location-btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#4caf50;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+
+.weather-animation{
+
+    margin:25px 0;
+
+}
+
+
+
+.cloud{
+
+    font-size:70px;
+
+    animation:moveCloud 4s infinite alternate;
+
+}
+
+
+
+.rain{
+
+    font-size:45px;
+
+}
+
+
+
+@keyframes moveCloud{
+
+    from{
+        transform:translateX(-30px);
+    }
+
+    to{
+        transform:translateX(30px);
+    }
+
+}
+
+
+
+#result{
+
+    background:rgba(255,255,255,0.2);
+
+    padding:20px;
+
+    border-radius:20px;
+
+}
+
+
+
+#result h1{
+
+    font-size:55px;
+
+}
+
+
+
+#result h2{
+
+    font-size:25px;
+
+}
+
+
+
+.weather-details{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+
+
+.box{
+
+    flex:1;
+
+    background:rgba(255,255,255,0.2);
+
+    padding:15px;
+
+    border-radius:20px;
+
+    font-size:25px;
+
+}
+
+
+
+.box span{
+
+    display:block;
+
+    font-size:14px;
+
+    margin-top:5px;
+
+}
+
+
+
+@media(max-width:450px){
+
+.weather-card{
+
+    padding:20px;
+
+}
+
+
+h1{
+
+    font-size:25px;
+
+}
+
+  }
