@@ -301,3 +301,21 @@ body::before{
     font-size:13px;
     opacity:.9;
 }    
+.install-btn{
+    width:100%;
+    max-width:430px;
+    height:55px;
+    margin:20px auto;
+    display:none;
+    border:none;
+    border-radius:18px;
+    background:#ff9800;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.install-btn i{
+    margin-right:8px;
+}
