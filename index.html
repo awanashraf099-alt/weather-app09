@@ -1,22 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
+
 <body>
 
-<div class="container">
-    <h2>🌤 Weather App</h2>
+<div class="overlay">
 
-    <input type="text" id="city" placeholder="Enter City Name">
+<div class="weather-card">
 
-    <br><br>
+<h1><i class="fa-solid fa-cloud-sun"></i> Weather App</h1>
 
-    <button onclick="getWeather()">Get Weather</button>
-    <button onclick="getCurrentLocation()">📍 Use My Location</button>
+<div class="search-box">
 
-    <div id="result"></div>
+<input
+type="text"
+id="city"
+placeholder="Enter city name">
+
+<button onclick="getWeather()">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+</div>
+
+<button class="location-btn"
+onclick="getCurrentLocation()">
+
+<i class="fa-solid fa-location-dot"></i>
+
+Use My Location
+
+</button>
+
+<div id="result">
+
+<h2>Search a city to view weather</h2>
+
+</div>
+
+</div>
+
 </div>
 
 <script src="script.js"></script>
