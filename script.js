@@ -1,163 +1,82 @@
+// =========================
+// API KEY
+// =========================
+
 const apiKey = "56fc8b0b803d1fa24af405154610f1e2";
 
+// =========================
+// ELEMENTS
+// =========================
 
-function getWeather(){
+const cityInput = document.getElementById("city");
 
-    const city = document.getElementById("city").value;
+const cityName = document.getElementById("cityName");
+const temperature = document.getElementById("temperature");
+const description = document.getElementById("description");
 
+const humidity = document.getElementById("humidity");
+const wind = document.getElementById("wind");
+
+const weatherIcon = document.getElementById("weatherIcon");
+
+// =========================
+// SEARCH WEATHER
+// =========================
+
+async function getWeather(){
+
+    const city = cityInput.value.trim();
 
     if(city === ""){
-        document.getElementById("result").innerHTML =
-        "<h2>Please enter city name</h2>";
+
+        alert("Please enter a city name");
+
         return;
+
     }
 
+    const url =
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-    fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
-    )
+    try{
 
-    .then(response => response.json())
+        const response = await fetch(url);
 
-    .then(data => {
+        const data = await response.json();
 
+        if(data.cod != 200){
 
-        if(data.cod !== 200){
-
-            document.getElementById("result").innerHTML =
-            "<h2>City not found</h2>";
+            alert("City not found");
 
             return;
 
         }
 
+        updateWeather(data);
 
+    }
 
-        document.getElementById("result").innerHTML = `
+    catch(error){
 
-        <h2>
-        📍 ${data.name}, ${data.sys.country}
-        </h2>
-
-
-        <img 
-        src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"
-        width="100">
-
-
-        <h1>
-        ${Math.round(data.main.temp)}°C
-        </h1>
-
-
-        <p>
-        ${data.weather[0].description}
-        </p>
-
-
-        <p>
-        💧 Humidity: ${data.main.humidity}%
-        </p>
-
-
-        <p>
-        🌬 Wind: ${data.wind.speed} m/s
-        </p>
-
-        `;
-
-
-
-    })
-
-    .catch(()=>{
-
-        document.getElementById("result").innerHTML =
-        "<h2>Error loading weather</h2>";
-
-    });
-
-}
-
-
-
-
-
-function getCurrentLocation(){
-
-
-    if(navigator.geolocation){
-
-
-        navigator.geolocation.getCurrentPosition(
-        
-        position => {
-
-
-            let lat = position.coords.latitude;
-
-            let lon = position.coords.longitude;
-
-
-
-            fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
-            )
-
-            .then(response=>response.json())
-
-            .then(data=>{
-
-
-                document.getElementById("result").innerHTML = `
-
-                <h2>
-                📍 ${data.name}, ${data.sys.country}
-                </h2>
-
-
-                <img 
-                src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"
-                width="100">
-
-
-                <h1>
-                ${Math.round(data.main.temp)}°C
-                </h1>
-
-
-                <p>
-                ${data.weather[0].description}
-                </p>
-
-
-                <p>
-                💧 Humidity: ${data.main.humidity}%
-                </p>
-
-
-                <p>
-                🌬 Wind: ${data.wind.speed} m/s
-                </p>
-
-                `;
-
-
-            });
-
-
-        },
-
-        ()=>{
-
-            alert("Location permission denied");
-
-        });
-
+        alert("Unable to load weather data");
 
     }
 
 }
+
+// =========================
+// ENTER KEY SEARCH
+// =========================
+
+cityInput.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        getWeather();
+
+    }
+
+});
 
 
 
