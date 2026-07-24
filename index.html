@@ -1,6 +1,40 @@
-<div class="search-box">
-    <input type="text" id="city" placeholder="Enter city name">
-    <button onclick="getWeather()">
-        🔍
-    </button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <h1><i class="fa-solid fa-cloud-sun"></i> Weather App</h1>
+
+      <div class="search">
+        <input type="text" id="city" placeholder="Enter city name" />
+        <button onclick="getWeather()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <button class="location" onclick="getCurrentLocation()">
+        <i class="fa-solid fa-location-dot"></i> Use My Location
+      </button>
+
+      <div id="result">
+        <h2>Search a city</h2>
+        <p>Your weather will appear here.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
