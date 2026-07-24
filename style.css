@@ -122,5 +122,114 @@ body::before{
     opacity:.9;
 
 }
-    
+/* =========================
+   SEARCH AREA
+========================= */
+
+.search-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.search-area input{
+
+    flex:1;
+
+    height:55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    padding:0 20px;
+
+    font-size:16px;
+
+    background:rgba(255,255,255,.85);
+
+    color:#333;
+
+}
+
+.search-area input::placeholder{
+
+    color:#777;
+
+}
+
+.search-area button{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:#ffffff;
+
+    color:#2196f3;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.search-area button:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+/* =========================
+   LOCATION BUTTON
+========================= */
+
+.location-btn{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(90deg,#00c853,#64dd17);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.location-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}    
     
