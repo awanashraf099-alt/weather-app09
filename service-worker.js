@@ -1,4 +1,4 @@
-Enterconst cacheName = "weather-app-v1";
+const cacheName = "weather-app-v1";
 
 const assets = [
     "./",
