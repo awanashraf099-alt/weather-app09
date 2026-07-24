@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,10 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -17,91 +19,58 @@
 
 <body>
 
-<div class="weather-container">
+<div class="app">
 
-    <div class="weather-card">
+<div class="weather-card">
 
-        <h1>
-            <i class="fa-solid fa-cloud-sun"></i>
-            Weather App
-        </h1>
+<div class="header">
 
+<h1>
+<i class="fa-solid fa-cloud-sun"></i>
+Weather App
+</h1>
 
-        <div class="search-box">
-
-            <input 
-            type="text" 
-            id="city"
-            placeholder="Enter city name">
-
-
-            <button onclick="getWeather()">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-
-        </div>
-
-
-
-        <button class="location-btn" onclick="getCurrentLocation()">
-
-            <i class="fa-solid fa-location-dot"></i>
-
-            Use My Location
-
-        </button>
-
-
-
-        <div class="weather-animation">
-
-            <div class="cloud">
-                ☁️
-            </div>
-
-            <div class="rain">
-                🌧️
-            </div>
-
-        </div>
-
-
-
-
-        <div id="result">
-
-            <h2>Search a city</h2>
-
-            <p>Your weather will appear here</p>
-
-        </div>
-
-
-
-        <div class="weather-details">
-
-            <div class="box">
-                💧
-                <span>Humidity</span>
-            </div>
-
-
-            <div class="box">
-                🌬️
-                <span>Wind</span>
-            </div>
-
-        </div>
-
-
-
-    </div>
+<p class="subtitle">
+Real-Time Weather Forecast
+</p>
 
 </div>
 
+<div class="search-area">
 
+<input
+type="text"
+id="city"
+placeholder="Search city...">
 
-<script src="script.js"></script>
+<button
+id="searchBtn"
+onclick="getWeather()">
 
-</body>
-</html>
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>
+
+</div>
+
+<button
+class="location-btn"
+onclick="getCurrentLocation()">
+
+<i class="fa-solid fa-location-dot"></i>
+
+Use My Location
+
+</button>
+
+<div class="animation">
+
+<div class="cloud cloud1">☁️</div>
+
+<div class="cloud cloud2">☁️</div>
+
+<div class="sun">☀️</div>
+
+<div class="rain">🌧️</div>
+
+</div>
