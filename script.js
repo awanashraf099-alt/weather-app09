@@ -77,6 +77,83 @@ cityInput.addEventListener("keypress", function(e){
     }
 
 });
+// =========================
+// UPDATE WEATHER UI
+// =========================
 
+function updateWeather(data){
+
+    cityName.textContent =
+    `${data.name}, ${data.sys.country}`;
+
+    temperature.textContent =
+    `${Math.round(data.main.temp)}°C`;
+
+    description.textContent =
+    data.weather[0].description;
+
+    humidity.textContent =
+    `${data.main.humidity}%`;
+
+    wind.textContent =
+    `${data.wind.speed} m/s`;
+
+    weatherIcon.src =
+    `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+}
+
+
+// =========================
+// CURRENT LOCATION
+// =========================
+
+function getCurrentLocation(){
+
+    if(!navigator.geolocation){
+
+        alert("Geolocation is not supported.");
+
+        return;
+
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        async function(position){
+
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            try{
+
+                const url =
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+                const response = await fetch(url);
+
+                const data = await response.json();
+
+                updateWeather(data);
+
+            }
+
+            catch(error){
+
+                alert("Unable to get weather.");
+
+            }
+
+        },
+
+        function(){
+
+            alert("Location permission denied.");
+
+        }
+
+    );
+
+        }
 
 
