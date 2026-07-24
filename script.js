@@ -1,4 +1,3 @@
-alert("JS is working");
 const apiKey = "56fc8b0b803d1fa24af405154610f1e2";
 
 
